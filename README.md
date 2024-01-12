@@ -31,11 +31,9 @@
 
 # Acala audit details
 - Total Prize Pool: 36,500 in USDC
-  - HM awards: 24,750 in USDC
+  - HM awards: 27,750 in USDC
   - Analysis awards: 1,500 in USDC
   - QA awards: 750 in USDC
-  - Bot Race awards: 2,250 in USDC
-  - Gas awards: 750 in USDC
   - Judge awards: 3,600 in USDC
   - Lookout awards: 2,400 in USDC
   - Scout awards: $500 in USDC
@@ -46,11 +44,6 @@
 - Ends TBD February 2, 2024 20:00 UTC
 
 ## Automated Findings / Publicly Known Issues
-
-The 4naly3er report can be found [here](https://github.com/code-423n4/2024-01-acala/blob/main/4naly3er-report.md).
-
-Automated findings output for the audit can be found [here](https://github.com/code-423n4/2024-01-acala/blob/main/bot-report.md) within 24 hours of audit opening.
-
 _Note for C4 wardens: Anything included in this `Automated Findings / Publicly Known Issues` section is considered a publicly known issue and is ineligible for awards._
 
 [ ⭐️ SPONSORS: Are there any known issues or risks deemed acceptable that shouldn't lead to a valid finding? If so, list them here. ]
