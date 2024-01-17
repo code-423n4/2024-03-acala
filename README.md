@@ -9,13 +9,6 @@ Please ensure you working directory is `./src`
 - Build: `cargo build`
 - Test: `cargo test`
 
-## Links
-
-- Website: https://acala.network
-- dApp: https://apps.acala.network/staking
-- Repo: http://github.com/AcalaNetwork/Acala
-- Guide: https://guide.acalaapps.wiki/staking/aca-staking
-
 # Repo setup
 
 ## ⭐️ Sponsor: Add code to this repo
@@ -73,12 +66,12 @@ _Note for C4 wardens: Anything included in this `Automated Findings / Publicly K
 
 ## Links
 
-- **Previous audits:** 
-- **Documentation:**
-- **Website:**
-- **Twitter:** 
-- **Discord:** 
-
+- **Previous audits:** https://github.com/AcalaNetwork/Acala/tree/master/audit
+- **Documentation:** https://guide.acalaapps.wiki/staking/aca-staking
+- **Website:** https://acala.network
+- **Twitter:** https://twitter.com/AcalaNetwork
+- **Discord:** https://acala.gg
+- **Main Repo:** http://github.com/AcalaNetwork/Acala
 
 # Scope
 
