@@ -62,7 +62,13 @@ _Note for C4 wardens: Anything included in this `Automated Findings / Publicly K
 
 # Overview
 
-[ ⭐️ SPONSORS: add info here ]
+The following substrate modules are used by Acala Network to implement staking and earning functionality and are in scope for this audit:
+
+- [Incentives](src/modules/incentives/): Substrate module for staking LP tokens, keeping track of shares and incentives for staking pools.
+
+- [Rewards](src/orml/rewards/): Used by the incentives module to calculate and distribute rewards to users.
+
+- [Earning](src/modules/earning/): Implements a bond/locked token system, which allows users to lock their tokens for a period of time.
 
 ## Links
 
@@ -75,22 +81,23 @@ _Note for C4 wardens: Anything included in this `Automated Findings / Publicly K
 
 # Scope
 
-[ ⭐️ SPONSORS: add scoping and technical details here ]
+- [Incentives](src/modules/incentives/src/lib.rs): Each period, pools will accumulate incentives and rewards are distributed to them from RewardsSource. Each pool can receive multiple incentives. Users can claim rewards from the pool at any time. Deduction rate is configurable and is applied to the rewards when they are claimed. When a user adds liquidity to the pool, they receive shares, and withdrawn rewards are adjusted accordingly so the new user will start with no reward.
 
-- [ ] In the table format shown below, provide the name of each contract and:
-  - [ ] source lines of code (excluding blank lines and comments) in each *For line of code counts, we recommend running prettier with a 100-character line length, and using [cloc](https://github.com/AlDanial/cloc).* 
-  - [ ] external contracts called in each
-  - [ ] libraries used in each
+- [Rewards](src/orml/rewards/src/lib.rs): This module contains the base methods for calculating and distributing rewards. It is used by the incentives module to calculate and distribute rewards to users.
 
-*List all files in scope in the table below (along with hyperlinks) -- and feel free to add notes here to emphasize areas of focus.*
-
-| Contract | SLOC | Purpose | Libraries used |  
-| ----------- | ----------- | ----------- | ----------- |
-| [contracts/folder/sample.sol](https://github.com/code-423n4/repo-name/blob/contracts/folder/sample.sol) | 123 | This contract does XYZ | [`@openzeppelin/*`](https://openzeppelin.com/contracts/) |
+- [Earning](src/modules/earning/src/lib.rs): Users will bond/lock their tokens for a period of time. Unbonding/unlocking is possible by paying a fee/penalty, or requesting to unbond/unlock and waiting for the unbonding period to finish before you can withdraw. The module implements a set of hooks that can be used by other modules (i.e. Incentives) to implement staking.
 
 ## Out of scope
 
-*List any files/contracts that are out of scope for this audit.*
+The following modules are out of scope for this audit. They are not used by the modules in scope and are not required for the functionality of the protocol. They are included in the repository to make it easier to run the tests.
+
+- [EVM Utility](src/modules/evm-utility)
+- [Stable Asset](src/modules/stable-asset)
+- [Support](src/modules/support)
+- [Tokens](src/orml/tokens)
+- [Traits](src/orml/traits)
+- [Utilities](src/orml/utilities)
+
 
 # Additional Context
 
