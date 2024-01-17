@@ -1,3 +1,21 @@
+# Acala Network
+
+## Build and test
+
+Refer to [this](https://docs.substrate.io/install/) guide for detailed instructions to setup dev env.
+
+Please ensure you working directory is `./src`
+
+- Build: `cargo build`
+- Test: `cargo test`
+
+## Links
+
+- Website: https://acala.network
+- dApp: https://apps.acala.network/staking
+- Repo: http://github.com/AcalaNetwork/Acala
+- Guide: https://guide.acalaapps.wiki/staking/aca-staking
+
 # Repo setup
 
 ## ⭐️ Sponsor: Add code to this repo
