@@ -14,10 +14,10 @@
 - Starts January 22, 2024 20:00 UTC
 - Ends February 2, 2024 20:00 UTC
 
-## Automated Findings / Publicly Known Issues
-_Note for C4 wardens: Anything included in this `Automated Findings / Publicly Known Issues` section is considered a publicly known issue and is ineligible for awards._
+## Publicly Known Issues
+_Note for C4 wardens: Anything included in this `Publicly Known Issues` section is considered a publicly known issue and is ineligible for awards._
 
-- None
+No publicly known issues
 
 # Overview
 
