@@ -12,7 +12,7 @@
 - Submit findings [using the C4 form](https://code4rena.com/contests/2024-01-acala/submit)
 - [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
 - Starts January 22, 2024 20:00 UTC
-- Ends TBD February 2, 2024 20:00 UTC
+- Ends February 2, 2024 20:00 UTC
 
 ## Automated Findings / Publicly Known Issues
 _Note for C4 wardens: Anything included in this `Automated Findings / Publicly Known Issues` section is considered a publicly known issue and is ineligible for awards._
@@ -79,7 +79,6 @@ The following modules are out of scope for this audit. They are not used by the 
 - Staker always gets more or equal amount of tokens back
 
 ## Scoping Details 
-[ ⭐️ SPONSORS: please confirm/edit the information below. ]
 
 ```
 - If you have a public code repo, please share it here: https://github.com/AcalaNetwork/Acala 
