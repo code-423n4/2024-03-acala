@@ -1,0 +1,57 @@
+[package]
+name = "acala-primitives"
+version = "2.23.0"
+authors = ["Acala Developers"]
+edition = "2021"
+
+[dependencies]
+log = { workspace = true }
+hex-literal = { workspace = true }
+bstringify = { workspace = true }
+serde = { workspace = true, features = ["alloc", "derive"] }
+parity-scale-codec = { workspace = true, features = ["max-encoded-len"] }
+num_enum = { workspace = true }
+scale-info = { workspace = true }
+enumflags2 = { workspace = true, features = ["serde"] }
+paste = { workspace = true }
+
+sp-core = { workspace = true }
+sp-runtime = { workspace = true }
+sp-std = { workspace = true }
+sp-io = { workspace = true }
+sp-api = { workspace = true }
+
+frame-support = { workspace = true }
+
+orml-traits = { workspace = true }
+
+module-evm-utility = { workspace = true }
+module-evm-utility-macro = { workspace = true }
+nutsfinance-stable-asset = { workspace = true }
+
+[dev-dependencies]
+serde_json = { workspace = true, features = ["std"] }
+
+
+[features]
+default = ["std"]
+std = [
+	"serde/std",
+	"parity-scale-codec/std",
+	"num_enum/std",
+	"scale-info/std",
+	"enumflags2/serde",
+	"sp-runtime/std",
+	"sp-core/std",
+	"sp-std/std",
+	"sp-io/std",
+	"sp-api/std",
+
+	"frame-support/std",
+
+	"orml-traits/std",
+	"module-evm-utility/std",
+	"nutsfinance-stable-asset/std",
+]
+evm-tests = []
+try-runtime = []
