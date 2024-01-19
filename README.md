@@ -9,10 +9,10 @@
   - Lookout awards: 2,400 in USDC
   - Scout awards: $500 in USDC
 - Join [C4 Discord](https://discord.gg/code4rena) to register
-- Submit findings [using the C4 form](https://code4rena.com/contests/2024-01-acala/submit)
+- Submit findings [using the C4 form](https://code4rena.com/contests/2024-02-acala/submit)
 - [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
-- Starts January 22, 2024 20:00 UTC
-- Ends February 2, 2024 20:00 UTC
+- Starts February 2, 2024 20:00 UTC
+- Ends February 16, 2024 20:00 UTC
 
 ## Publicly Known Issues
 _Note for C4 wardens: Anything included in this `Publicly Known Issues` section is considered a publicly known issue and is ineligible for awards._
@@ -23,11 +23,11 @@ No publicly known issues
 
 The following substrate modules are used by Acala Network to implement staking and earning functionality and are in scope for this audit:
 
-- [Incentives](https://github.com/code-423n4/2024-01-acala/tree/main/src/modules/incentives/): Substrate module for staking LP tokens, keeping track of shares and incentives for staking pools.
+- [Incentives](https://github.com/code-423n4/2024-02-acala/tree/main/src/modules/incentives/): Substrate module for staking LP tokens, keeping track of shares and incentives for staking pools.
 
-- [Rewards](https://github.com/code-423n4/2024-01-acala/tree/main/src/orml/rewards/): Used by the incentives module to calculate and distribute rewards to users.
+- [Rewards](https://github.com/code-423n4/2024-02-acala/tree/main/src/orml/rewards/): Used by the incentives module to calculate and distribute rewards to users.
 
-- [Earning](https://github.com/code-423n4/2024-01-acala/tree/main/src/modules/earning/): Implements a bond/locked token system, which allows users to lock their tokens for a period of time.
+- [Earning](https://github.com/code-423n4/2024-02-acala/tree/main/src/modules/earning/): Implements a bond/locked token system, which allows users to lock their tokens for a period of time.
 
 ## Links
 
@@ -40,22 +40,22 @@ The following substrate modules are used by Acala Network to implement staking a
 
 # Scope
 
-- [Incentives](https://github.com/code-423n4/2024-01-acala/tree/main/src/modules/incentives/src/lib.rs): Each period, pools will accumulate incentives and rewards are distributed to them from RewardsSource. Each pool can receive multiple incentives. Users can claim rewards from the pool at any time. Deduction rate is configurable and is applied to the rewards when they are claimed. When a user adds liquidity to the pool, they receive shares, and withdrawn rewards are adjusted accordingly so the new user will start with no reward.
+- [Incentives](https://github.com/code-423n4/2024-02-acala/tree/main/src/modules/incentives/src/lib.rs): Each period, pools will accumulate incentives and rewards are distributed to them from RewardsSource. Each pool can receive multiple incentives. Users can claim rewards from the pool at any time. Deduction rate is configurable and is applied to the rewards when they are claimed. When a user adds liquidity to the pool, they receive shares, and withdrawn rewards are adjusted accordingly so the new user will start with no reward.
 
-- [Rewards](https://github.com/code-423n4/2024-01-acala/tree/main/src/orml/rewards/src/lib.rs): This module contains the base methods for calculating and distributing rewards. It is used by the incentives module to calculate and distribute rewards to users.
+- [Rewards](https://github.com/code-423n4/2024-02-acala/tree/main/src/orml/rewards/src/lib.rs): This module contains the base methods for calculating and distributing rewards. It is used by the incentives module to calculate and distribute rewards to users.
 
-- [Earning](https://github.com/code-423n4/2024-01-acala/tree/main/src/modules/earning/src/lib.rs): Users will bond/lock their tokens for a period of time. Unbonding/unlocking is possible by paying a fee/penalty, or requesting to unbond/unlock and waiting for the unbonding period to finish before you can withdraw. The module implements a set of hooks that can be used by other modules (i.e. Incentives) to implement staking.
+- [Earning](https://github.com/code-423n4/2024-02-acala/tree/main/src/modules/earning/src/lib.rs): Users will bond/lock their tokens for a period of time. Unbonding/unlocking is possible by paying a fee/penalty, or requesting to unbond/unlock and waiting for the unbonding period to finish before you can withdraw. The module implements a set of hooks that can be used by other modules (i.e. Incentives) to implement staking.
 
 ## Out of scope
 
 The following modules are out of scope for this audit. They are not used by the modules in scope and are not required for the functionality of the protocol. They are included in the repository to make it easier to run the tests.
 
-- [EVM Utility](https://github.com/code-423n4/2024-01-acala/tree/main/src/modules/evm-utility)
-- [Stable Asset](https://github.com/code-423n4/2024-01-acala/tree/main/src/modules/stable-asset)
-- [Support](https://github.com/code-423n4/2024-01-acala/tree/main/src/modules/support)
-- [Tokens](https://github.com/code-423n4/2024-01-acala/tree/main/src/orml/tokens)
-- [Traits](https://github.com/code-423n4/2024-01-acala/tree/main/src/orml/traits)
-- [Utilities](https://github.com/code-423n4/2024-01-acala/tree/main/src/orml/utilities)
+- [EVM Utility](https://github.com/code-423n4/2024-02-acala/tree/main/src/modules/evm-utility)
+- [Stable Asset](https://github.com/code-423n4/2024-02-acala/tree/main/src/modules/stable-asset)
+- [Support](https://github.com/code-423n4/2024-02-acala/tree/main/src/modules/support)
+- [Tokens](https://github.com/code-423n4/2024-02-acala/tree/main/src/orml/tokens)
+- [Traits](https://github.com/code-423n4/2024-02-acala/tree/main/src/orml/traits)
+- [Utilities](https://github.com/code-423n4/2024-02-acala/tree/main/src/orml/utilities)
 
 
 # Additional Context
