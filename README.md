@@ -11,8 +11,8 @@
 - Join [C4 Discord](https://discord.gg/code4rena) to register
 - Submit findings [using the C4 form](https://code4rena.com/contests/2024-02-acala/submit)
 - [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
-- Starts February 2, 2024 20:00 UTC
-- Ends February 16, 2024 20:00 UTC
+- Starts March 22, 2024 20:00 UTC
+- Ends April 5, 2024 20:00 UTC
 
 ## Publicly Known Issues
 _Note for C4 wardens: Anything included in this `Publicly Known Issues` section is considered a publicly known issue and is ineligible for awards._
