@@ -1,12 +1,12 @@
 # Acala Network
 
 # Acala audit details
-- Total Prize Pool: 36,500 in USDC
-  - HM awards: 27,750 in USDC
-  - Analysis awards: 1,500 in USDC
-  - QA awards: 750 in USDC
-  - Judge awards: 3,600 in USDC
-  - Lookout awards: 2,400 in USDC
+- Total Prize Pool: $36,500 in USDC
+  - HM awards: $27,750 in USDC
+  - Analysis awards: $1,500 in USDC
+  - QA awards: $750 in USDC
+  - Judge awards: $3,600 in USDC
+  - Lookout awards: $2,400 in USDC
   - Scout awards: $500 in USDC
 - Join [C4 Discord](https://discord.gg/code4rena) to register
 - Submit findings [using the C4 form](https://code4rena.com/contests/2024-03-acala/submit)
