@@ -1,0 +1,325 @@
+==============================================================
+Guild: Code4rena
+Channel: ARCHIVE-Q1-2024 / acala-mar22
+==============================================================
+
+[03/19/2024 23:39] knownfactc4_29311 (pinned)
+👋 Hello and welcome to the audit channel for the $36,500 Acala audit!
+
+📆 Audit opens 03/22/2024 20:00 (20:00 UTC) and runs through 04/05/2024 20:00 (20:00 UTC) (14 days).
+
+Please give a warm welcome to the Acala team, particularly @Bryan Chen and @Ermal, who will be available for questions either here in the channel or via a PRIVATE thread in the NZDT and CET timezones. 
+
+We'll be posting relevant links, documentation, etc. here, so if you intend to participate in this audit, consider enabling notifications for this channel. 🐺 ⏰
+
+Audit Page: https://code4rena.com/audits/2024-03-acala
+
+
+[03/19/2024 23:39] knownfactc4_29311
+Pinned a message.
+
+
+[03/21/2024 14:17] liffidmonky
+is this gonna be a rust or solidity codebase?
+
+
+[03/21/2024 14:18] kaveyjoe
+rust
+
+
+[03/22/2024 20:02] C4 (pinned)
+**Automated Findings / Publicly Known Issues**
+
+Reminder: all [Automated Findings / Publicly Known Issues](https://github.com/code-423n4/2024-03-acala#publicly-known-issues) are out of scope and ineligible for awards.
+
+{Embed}
+https://github.com/code-423n4/2024-03-acala
+GitHub - code-423n4/2024-03-acala
+Contribute to code-423n4/2024-03-acala development by creating an account on GitHub.
+Code4rena - ARCHIVE-Q1-2024 - acala-mar22 [1196965405705650316].txt_Files/49be6bc7-c4ec-4a80-938b-c451dbda9304-72EE5
+
+
+[03/22/2024 20:05] 0xsorrynotsorry
+Pinned a message.
+
+{Reactions}
+thankyou (2) 
+
+[03/23/2024 03:54] bryanchen
+👋
+
+
+[03/23/2024 04:07] jammyaa
+:hi5:
+
+
+[03/23/2024 09:24] liffidmonky
+seems like there are no publicly know issues right?
+
+
+[03/23/2024 11:33] bryanchen
+yes
+
+
+[03/24/2024 01:02] zhaojie
+Where is `PoolId::Dex(lp_currency_id)` defined
+
+
+[03/24/2024 04:47] bryanchen
+https://github.com/code-423n4/2024-03-acala/blob/28c60b339bc011d59fa05fda8276c8e70a7f5779/src/modules/support/src/incentives.rs#L28
+
+{Embed}
+https://github.com/code-423n4/2024-03-acala/blob/28c60b339bc011d59fa05fda8276c8e70a7f5779/src/modules/support/src/incentives.rs
+2024-03-acala/src/modules/support/src/incentives.rs at 28c60b339bc0...
+Contribute to code-423n4/2024-03-acala development by creating an account on GitHub.
+Code4rena - ARCHIVE-Q1-2024 - acala-mar22 [1196965405705650316].txt_Files/49be6bc7-c4ec-4a80-938b-c451dbda9304-72EE5
+
+
+[03/24/2024 05:15] zhaojie
+thanks
+
+
+[03/26/2024 14:12] souilos
+Hello, 
+
+I would like some explanations in order to understand the ```payout_reward_and_reaccumulate_reward``` function (code-423n4/2024-03-acala/blob/main/src/modules/incentives/src/lib.rs)
+
+How could there be "remaining rewards" after ```do_claim_rewards``` is executed?
+
+
+[03/26/2024 15:28] ermal3014
+the pool can be configured with `deduction_rate` meaning if you want to claim before loyalty program ends then part of the rewards goes back to pool
+
+{Reactions}
+👍🏻 
+
+[03/26/2024 16:00] souilos
+Also if I am not wrong I can claim only a partial amount of my rewards right?
+
+
+[03/26/2024 16:10] ermal3014
+No, you claim everything on a pool
+
+
+[03/26/2024 16:11] ermal3014
+`deduction_rate` is more like a penalty fee from your rewards
+
+
+[03/26/2024 16:13] ermal3014
+it goes back to pool and becomes reward for users who remain loyal to ending period
+
+
+[03/26/2024 16:28] souilos
+Ok thanks 😊
+
+{Reactions}
+👍 
+
+[03/27/2024 13:46] souilos
+Sorry but maybe we could open a private thread?
+
+{Reactions}
+👍 
+
+[03/28/2024 23:35] theschnilch
+Is the deduction rate set to 0 in the ending period so that no one gets a penalty anymore?
+
+
+[03/29/2024 06:00] ermal3014
+Yes
+
+
+[03/29/2024 07:47] ashopelessasmorty
+hi @Ermal i am unable to use ```cargo build``` and ```cargo test``` is this because the linked repo is not the whole project? or is it an issue with my system?
+
+
+[03/29/2024 08:47] carlos.w.
+You should run `cargo build` in the dir which contains ` Cargo.toml`. -- `2024-03-acala/src`
+
+
+[03/29/2024 11:44] ermal3014
+Only these modules are in scope for audit
+
+
+[03/29/2024 12:11] ashopelessasmorty
+yes but should i be able to run cargo build on this repo?
+
+
+[03/29/2024 12:11] ashopelessasmorty
+i'm there only
+
+
+[03/29/2024 12:12] ermal3014
+Yes. You can build and run tests
+
+
+[03/29/2024 12:44] carrotsmuggler
+what error do you see in the terminal?
+
+
+[03/29/2024 13:33] ashopelessasmorty
+a series of 3200 errors that say "not found in this scope" for simple std types like Err and others. previously the cargo version was not working with the project as the toolchain mentions 1.74.0 so i used  ```rustup component remove cargo --toolchain 1.74.0
+rustup component add cargo --toolchain 1.74.0```
+now cargo itself is not throwing any errors but test and build are.
+
+
+[03/29/2024 14:59] ashopelessasmorty
+resolved by uninstalling and using toolchain 1.74.0 globally, thanks.
+
+
+[03/29/2024 18:23] souilos
+Where are the fees calculated when unstaking?
+
+
+[03/30/2024 03:02] bryanchen
+there is no fee with `unbond` but a fee for `unbond_instant` https://github.com/code-423n4/2024-03-acala/blob/28c60b339bc011d59fa05fda8276c8e70a7f5779/src/modules/earning/src/lib.rs#L188-L190
+
+{Embed}
+https://github.com/code-423n4/2024-03-acala/blob/28c60b339bc011d59fa05fda8276c8e70a7f5779/src/modules/earning/src/lib.rs
+2024-03-acala/src/modules/earning/src/lib.rs at 28c60b339bc011d59fa...
+Contribute to code-423n4/2024-03-acala development by creating an account on GitHub.
+Code4rena - ARCHIVE-Q1-2024 - acala-mar22 [1196965405705650316].txt_Files/49be6bc7-c4ec-4a80-938b-c451dbda9304-72EE5
+
+
+[03/30/2024 14:31] souilos
+ok thanks! and other question, what's the MAX_ACA? is there gonna be a fixed supply or more tokens could be available with time?
+
+
+[03/30/2024 14:35] theschnilch
+What does this function do? As far as I can see, it is not used anywhere in the code and cannot be accessed from outside. https://github.com/code-423n4/2024-03-acala/blob/9c71c05cf2d9f0a2603984c50f76fc8a315d4d65/src/orml/rewards/src/lib.rs#L326-L361
+
+
+[04/01/2024 04:15] bryanchen
+Started a thread.
+
+
+[04/01/2024 04:16] bryanchen
+Started a thread.
+
+
+[04/01/2024 16:18] theschnilch
+Are all shares in a pool always equal to the total bonded amount in the earning module?
+
+
+[04/02/2024 01:20] bryanchen
+Started a thread.
+
+
+[04/02/2024 21:07] souilos
+Where in the codebase is managed the Loyalty Bonus? When and where is it send to users?
+
+I mainly looked at `do_claim_rewards`
+
+
+[04/03/2024 00:38] bryanchen
+Started a thread.
+
+
+[04/05/2024 20:02] C4
+**🚨 AUDIT ALERT**
+
+@🐺Wardens The **Acala** audit is now closed! Huge thanks to everyone who participated 🔍, whether you submitted a finding or not.
+
+What's next: The sponsor team and judge will review the findings over the next couple of weeks. Keep an eye on #📢announcements for regular updates on how the audit is progressing through awarding 🤑🏆, judging 🧑‍⚖️ and reporting 📜. Feel free to ping a Contest-Admin if you have questions along the way!
+
+
+[04/06/2024 04:49] theschnilch
+Does anyone know how many submissions?
+
+
+[04/06/2024 06:00] kaveyjoe
+106😀
+
+{Reactions}
+👍 (3) 
+
+[04/06/2024 06:45] yashar0x
+Bro 🙏😄
+
+{Reactions}
+😂 (2) 
+
+[04/17/2024 10:05] _paperparachute
+🤑 🎉  Awards for **Acala**:
+
+$8,470.72 USDC » @carrotsmuggler 
+$4,955.73 USDC » @ZanyBonzy 
+$3,420.86 USDC » @zhaojie 
+$3,054.79 USDC » AM (@SA and @0xmatei) 
+$3,012.88 USDC » @ihtishamsudo 
+$1,175.02 USDC » @TheSchnilch 
+$946.78 USDC » @Bauchibred 
+$908.38 USDC » @djxploit 
+$903.86 USDC » @CodeCipher 
+$746.93 USDC » @n4nika 
+$624.02 USDC » DarkTower (@0xrex and @haxatron) 
+$542.32 USDC » @ABAIKUNANBAEV 
+$517.80 USDC » @0xTheC0der 
+$480.02 USDC » @hunter_w3b 
+$98.99 USDC » @0xepley 
+$98.99 USDC » @Lin 
+$41.91 USDC » @Cryptor
+
+🏁 Findings summary
+--------------------------------------—
+High risk findings: 3 unique (6 total)
+Med risk findings: 4 unique (12 total)
+QA reports: 7 (Best: Bauchibred)
+Advanced analysis reports: 6 (Best: DarkTower)
+
+Awards will be distributed on Polygon within the next week. Congratulations all!  💸 💸 💸
+
+*Note: If you participated in this audit and don’t see your name on this list, please wait until the report is published and the findings repo is made public to check on your submissions.*
+
+{Reactions}
+🔥 (10) 🎉 (2) 
+
+[04/17/2024 11:01] hunter0x01
+Congrats all and @ihtishamsudo great wins 🏆 in rust based contests these days👌
+
+{Reactions}
+🔥 🙏🏻 ❤️ 
+
+[04/17/2024 11:08] 0xshaheen
+Congratulations @ihtishamsudo ❤️‍🔥
+Rust Auditooooor 🫡
+
+{Reactions}
+❤️ 🙏🏻 
+
+[04/17/2024 12:22] theschnilch
+Congrats all. I'm really curious about what the three highs are, because honestly, I didn't think there was even one
+
+
+[04/17/2024 14:45] ihtishamsudo
+First Top 5 Alhamdullilah 
+Thanks 🎊 rekxor, trying to improve every single day
+
+{Reactions}
+🏆 (2) 
+
+[04/17/2024 14:45] ihtishamsudo
+ty brother 🫡
+
+{Reactions}
+🫡 
+
+[04/17/2024 14:46] ihtishamsudo
+GG everyone participated 🎊
+
+
+[04/18/2024 16:21] stockmart
+Started a thread.
+
+
+[04/25/2024 02:17] itsmetechjay
+ℹ️ This channel is pending archive.   As a result, any private threads will be permanently deleted on Friday, 03 May 2024. Please make sure to grab anything you might need before then.
+
+
+[05/03/2024 15:26] itsmetechjay
+ℹ️ Reminder: this channel will be deleted in 24 hours.
+
+
+==============================================================
+Exported 56 message(s)
+==============================================================
